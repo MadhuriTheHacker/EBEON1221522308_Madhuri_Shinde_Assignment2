@@ -1,0 +1,122 @@
+/*
+ * Question 1: Follow naming convention rule
+ 
+	- Take 20 integer inputs from user and print the following:
+	- number of positive numbers
+	- number of negative numbers
+	- number of odd numbers
+	- number of even numbers
+	- number of 0s.
+
+ */ 
+package poc2;
+
+import java.util.Arrays;
+import java.util.Scanner;
+
+class PrintsALL {
+	public void printAllDetails(int inputNumber) {
+
+		int i, count = 0;
+		Scanner sc = new Scanner(System.in);
+		int[] inputArray = new int[inputNumber];
+		System.out.println("Enter Number of Elements: ");
+
+		for (i = 0; i < inputArray.length; i++) {
+			inputArray[i] = sc.nextInt();
+		}
+
+		System.out.print("Entered Numbers Are:");
+		System.out.println(Arrays.toString(inputArray));
+
+		System.out.print("All Postive Numbers Are: ");
+		for (i = 0; i <= inputArray.length - 1; i++) {
+			if (inputArray[i] > 0) {
+				System.out.print(inputArray[i] + " ");
+			}
+		}
+		System.out.println();
+		System.out.print("All Negative Numbers Are: ");
+		for (i = 0; i <= inputArray.length - 1; i++) {
+			if (inputArray[i] < 0) {
+				System.out.print(inputArray[i] + " ");
+			}
+		}
+		System.out.println();
+		System.out.print("All Odd Numbers Are: ");
+
+		for (i = 0; i <= inputArray.length - 1; i++) {
+			if (inputArray[i] % 2 != 0) {
+				System.out.print(inputArray[i] + " ");
+			}
+		}
+		System.out.println();
+		System.out.print("All Even Numbers Are: ");
+
+		for (i = 0; i <= inputArray.length - 1; i++) {
+			if (inputArray[i] % 2 == 0) {
+				System.out.print(inputArray[i] + " ");
+			}
+		}
+		System.out.println();
+		System.out.print("Number of Zero's Entered Are: ");
+
+		for (i = 0; i <= inputArray.length - 1; i++) { 
+			if (inputArray[i] == 0) {
+				System.out.print(inputArray[i] + " ");
+				count++;
+			}
+		}
+		System.out.println();
+		System.out.println("Number of Zero's Entered Are: "+"[" + count + "]");
+
+	}
+}
+
+public class Question1 {
+	public static void main(String[] args) {
+		int inputNumber;
+		PrintsALL printall = new PrintsALL();
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter Number of Elements: ");
+		inputNumber = sc.nextInt();
+		if (inputNumber < 0) {
+			System.out.println("Enter Postive Elements");
+		} else {
+			printall.printAllDetails(inputNumber);
+		}
+
+	}
+}
+/*Output =>
+Enter Number of Elements: 
+20
+Enter Number of Elements: 
+2
+-8
+0
+27
+21
+0
+7
+2
+88
+-4
+55
+3
+10
+25
+0
+0
+-4
+-5
+-8
+89
+Entered Numbers Are:[2, -8, 0, 27, 21, 0, 7, 2, 88, -4, 55, 3, 10, 25, 0, 0, -4, -5, -8, 89]
+All Postive Numbers Are: 2 27 21 7 2 88 55 3 10 25 89 
+All Negative Numbers Are: -8 -4 -4 -5 -8 
+All Odd Numbers Are: 27 21 7 55 3 25 -5 89 
+All Even Numbers Are: 2 -8 0 0 2 88 -4 10 0 0 -4 -8 
+Number of Zero's Entered Are: 0 0 0 0 
+Number of Zero's Entered Are: [4]
+*/

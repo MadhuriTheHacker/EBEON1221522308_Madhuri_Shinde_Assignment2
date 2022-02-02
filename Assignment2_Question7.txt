@@ -1,0 +1,61 @@
+/*Question 7
+Print Primes Numbers From 10 Integer Numbers
+*/
+package poc2;
+
+import java.util.Scanner;
+
+public class PrimeNumbers {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int inputPrimeNumber, i, count = 0;
+
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter no of Numbers: ");
+		inputPrimeNumber = sc.nextInt();
+
+		int newArray[] = new int[inputPrimeNumber];
+
+		System.out.println("Enter Numbers: ");
+		for (i = 0; i < newArray.length; i++) {
+			newArray[i] = sc.nextInt();
+		}
+		System.out.print("Entered Numbers: ");
+		for (i = 0; i < newArray.length; i++) {
+			System.out.print(newArray[i] + " ");
+		}
+		System.out.println();
+		System.out.print("Prime Numbers are: ");
+		for (i = 1; i <= newArray.length; i++) {
+			count = 0;
+			for (int j = 2; j <= i / 2; j++) {
+				if (i % j == 0) {
+					count++;
+					break;
+				}
+			}
+			if (count == 0) {
+				System.out.print(i+ " ");
+			}
+		}
+	}
+
+}
+/*Output =>
+ * Enter no of Numbers: 
+10
+Enter Numbers: 
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+Entered Numbers: 1 2 3 4 5 6 7 8 9 10 
+Prime Numbers are: 1 2 3 5 7 
+ */

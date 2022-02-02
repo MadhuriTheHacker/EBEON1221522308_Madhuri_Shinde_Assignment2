@@ -1,0 +1,76 @@
+/*
+ Question 5: 
+
+	- Write a Java program to find the sum of two arrays elements?
+		array1[] = {10, 20, 30, 40, 50};  // Take values form Keyboard
+		array2[] = {9, 18, 27, 36, 45};	 //  Take Values form keyboard
+ */
+package poc2;
+
+import java.util.Arrays;
+import java.util.Scanner;
+
+public class SumOfArrays {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int sizeOfArray, i;
+
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter Number of Elements: ");
+		sizeOfArray = sc.nextInt();
+
+		int FirstArrayElements[] = new int[sizeOfArray];
+		int SecondArrayElements[] = new int[sizeOfArray];
+		int SumOfTwoArrys[] = new int[sizeOfArray];
+
+
+		System.out.println("Enter Array Elements in First Array: ");
+		for (i = 0; i < FirstArrayElements.length; i++) {
+			FirstArrayElements[i] = sc.nextInt();
+		}
+		System.out.println("Enter Array Elements in Second Array: ");
+		for (i = 0; i < SecondArrayElements.length; i++) {
+			SecondArrayElements[i] = sc.nextInt();
+		}
+		
+		System.out.println();
+		System.out.print("Entered First Array Elements: ");
+		for (i = 0; i <= FirstArrayElements.length-1; i++) {
+			System.out.print(FirstArrayElements[i] + " ");
+		}
+		System.out.println();
+		System.out.print("Entered Second Array Elements: ");
+		for (i = 0; i <= SecondArrayElements.length-1; i++) {
+			System.out.print(SecondArrayElements[i] + " ");
+		}
+		for(i=0;i<=sizeOfArray-1;i++){
+			{
+				SumOfTwoArrys[i]=+FirstArrayElements[i]+SecondArrayElements[i];			}
+		}
+		System.out.println();
+		System.out.print("Sum Of Two Array Elements Are: ");
+		System.out.println(Arrays.toString(SumOfTwoArrys));
+	}
+
+}
+/*Output =>
+Enter Number of Elements: 
+5
+Enter Array Elements in First Array: 
+10
+20
+30
+40
+50
+Enter Array Elements in Second Array: 
+9
+18
+27
+36
+45
+
+Entered First Array Elements: 10 20 30 40 50 
+Entered Second Array Elements: 9 18 27 36 45 
+Sum Of Two Array Elements Are: [19, 38, 57, 76, 95]
+*/
